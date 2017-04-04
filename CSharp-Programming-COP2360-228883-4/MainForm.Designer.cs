@@ -37,14 +37,18 @@
             this.BagSelection = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialListView();
             this.BagSelectionColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.QuantityBox = new System.Windows.Forms.ComboBox();
-            this.materialLabel1 = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialLabel();
+            this.QuantityDesiredLabel = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialLabel();
             this.OverNightRadioButton = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialRadioButton();
-            this.materialRadioButton1 = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialRadioButton();
+            this.StandardRadioButton = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialRadioButton();
             this.ThreeDayRadioButton = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialRadioButton();
             this.DeliveryRateBox = new System.Windows.Forms.GroupBox();
             this.materialDivider1 = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialDivider();
             this.ClearSelectionButton = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialFlatButton();
             this.ProcessOrderButton = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialRaisedButton();
+            this.BagTypeErrorLabel = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialLabel();
+            this.QuantityErrorLabel = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialLabel();
+            this.DeliveryErrorLabel = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialLabel();
+            this.RequiredInfoLabel = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialLabel();
             this.DeliveryRateBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +85,7 @@
             this.BagSelection.UseCompatibleStateImageBehavior = false;
             this.BagSelection.View = System.Windows.Forms.View.Details;
             this.BagSelection.VirtualListSize = 1;
+            this.BagSelection.SelectedIndexChanged += new System.EventHandler(this.BagSelection_SelectedIndexChanged);
             // 
             // BagSelectionColumn
             // 
@@ -107,20 +112,21 @@
             this.QuantityBox.Name = "QuantityBox";
             this.QuantityBox.Size = new System.Drawing.Size(121, 21);
             this.QuantityBox.TabIndex = 1;
+            this.QuantityBox.SelectedValueChanged += new System.EventHandler(this.QuantityBox_SelectedValueChanged);
             // 
-            // materialLabel1
+            // QuantityDesiredLabel
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(572, 79);
-            this.materialLabel1.Margin = new System.Windows.Forms.Padding(0, 70, 100, 0);
-            this.materialLabel1.MouseState = CSharp_Programming_COP2360_228883_4.MaterialDesign.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(119, 19);
-            this.materialLabel1.TabIndex = 2;
-            this.materialLabel1.Text = "Quantity Desired";
+            this.QuantityDesiredLabel.AutoSize = true;
+            this.QuantityDesiredLabel.Depth = 0;
+            this.QuantityDesiredLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.QuantityDesiredLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.QuantityDesiredLabel.Location = new System.Drawing.Point(572, 79);
+            this.QuantityDesiredLabel.Margin = new System.Windows.Forms.Padding(0, 70, 100, 0);
+            this.QuantityDesiredLabel.MouseState = CSharp_Programming_COP2360_228883_4.MaterialDesign.MouseState.HOVER;
+            this.QuantityDesiredLabel.Name = "QuantityDesiredLabel";
+            this.QuantityDesiredLabel.Size = new System.Drawing.Size(119, 19);
+            this.QuantityDesiredLabel.TabIndex = 2;
+            this.QuantityDesiredLabel.Text = "Quantity Desired";
             // 
             // OverNightRadioButton
             // 
@@ -136,28 +142,29 @@
             this.OverNightRadioButton.Size = new System.Drawing.Size(127, 30);
             this.OverNightRadioButton.TabIndex = 0;
             this.OverNightRadioButton.TabStop = true;
+            this.OverNightRadioButton.Tag = "10";
             this.OverNightRadioButton.Text = "Overnight (10%)";
             this.OverNightRadioButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.OverNightRadioButton.UseVisualStyleBackColor = true;
             // 
-            // materialRadioButton1
+            // StandardRadioButton
             // 
-            this.materialRadioButton1.AutoSize = true;
-            this.materialRadioButton1.Depth = 0;
-            this.materialRadioButton1.Font = new System.Drawing.Font("Roboto", 10F);
-            this.materialRadioButton1.Location = new System.Drawing.Point(15, 28);
-            this.materialRadioButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.materialRadioButton1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialRadioButton1.MouseState = CSharp_Programming_COP2360_228883_4.MaterialDesign.MouseState.HOVER;
-            this.materialRadioButton1.Name = "materialRadioButton1";
-            this.materialRadioButton1.Ripple = true;
-            this.materialRadioButton1.Size = new System.Drawing.Size(116, 30);
-            this.materialRadioButton1.TabIndex = 2;
-            this.materialRadioButton1.TabStop = true;
-            this.materialRadioButton1.Tag = "5";
-            this.materialRadioButton1.Text = "Standard (5%)";
-            this.materialRadioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.materialRadioButton1.UseVisualStyleBackColor = true;
+            this.StandardRadioButton.AutoSize = true;
+            this.StandardRadioButton.Depth = 0;
+            this.StandardRadioButton.Font = new System.Drawing.Font("Roboto", 10F);
+            this.StandardRadioButton.Location = new System.Drawing.Point(15, 28);
+            this.StandardRadioButton.Margin = new System.Windows.Forms.Padding(0);
+            this.StandardRadioButton.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.StandardRadioButton.MouseState = CSharp_Programming_COP2360_228883_4.MaterialDesign.MouseState.HOVER;
+            this.StandardRadioButton.Name = "StandardRadioButton";
+            this.StandardRadioButton.Ripple = true;
+            this.StandardRadioButton.Size = new System.Drawing.Size(116, 30);
+            this.StandardRadioButton.TabIndex = 2;
+            this.StandardRadioButton.TabStop = true;
+            this.StandardRadioButton.Tag = "5";
+            this.StandardRadioButton.Text = "Standard (5%)";
+            this.StandardRadioButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.StandardRadioButton.UseVisualStyleBackColor = true;
             // 
             // ThreeDayRadioButton
             // 
@@ -180,7 +187,7 @@
             // 
             // DeliveryRateBox
             // 
-            this.DeliveryRateBox.Controls.Add(this.materialRadioButton1);
+            this.DeliveryRateBox.Controls.Add(this.StandardRadioButton);
             this.DeliveryRateBox.Controls.Add(this.OverNightRadioButton);
             this.DeliveryRateBox.Controls.Add(this.ThreeDayRadioButton);
             this.DeliveryRateBox.Location = new System.Drawing.Point(79, 300);
@@ -219,12 +226,14 @@
             this.ClearSelectionButton.TabIndex = 5;
             this.ClearSelectionButton.Text = "Clear Selection";
             this.ClearSelectionButton.UseVisualStyleBackColor = true;
+            this.ClearSelectionButton.Click += new System.EventHandler(this.ClearSelectionButton_Click);
             // 
             // ProcessOrderButton
             // 
             this.ProcessOrderButton.AutoSize = true;
             this.ProcessOrderButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ProcessOrderButton.Depth = 0;
+            this.ProcessOrderButton.Enabled = false;
             this.ProcessOrderButton.Icon = null;
             this.ProcessOrderButton.Location = new System.Drawing.Point(514, 430);
             this.ProcessOrderButton.MouseState = CSharp_Programming_COP2360_228883_4.MaterialDesign.MouseState.HOVER;
@@ -234,6 +243,64 @@
             this.ProcessOrderButton.TabIndex = 6;
             this.ProcessOrderButton.Text = "Process Order";
             this.ProcessOrderButton.UseVisualStyleBackColor = true;
+            this.ProcessOrderButton.Visible = false;
+            this.ProcessOrderButton.Click += new System.EventHandler(this.ProcessOrderButton_Click);
+            // 
+            // BagTypeErrorLabel
+            // 
+            this.BagTypeErrorLabel.AutoSize = true;
+            this.BagTypeErrorLabel.Depth = 0;
+            this.BagTypeErrorLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.BagTypeErrorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BagTypeErrorLabel.Location = new System.Drawing.Point(566, 260);
+            this.BagTypeErrorLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.BagTypeErrorLabel.MouseState = CSharp_Programming_COP2360_228883_4.MaterialDesign.MouseState.HOVER;
+            this.BagTypeErrorLabel.Name = "BagTypeErrorLabel";
+            this.BagTypeErrorLabel.Size = new System.Drawing.Size(184, 19);
+            this.BagTypeErrorLabel.TabIndex = 7;
+            this.BagTypeErrorLabel.Text = "• Bag selection is required";
+            // 
+            // QuantityErrorLabel
+            // 
+            this.QuantityErrorLabel.AutoSize = true;
+            this.QuantityErrorLabel.Depth = 0;
+            this.QuantityErrorLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.QuantityErrorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.QuantityErrorLabel.Location = new System.Drawing.Point(566, 231);
+            this.QuantityErrorLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.QuantityErrorLabel.MouseState = CSharp_Programming_COP2360_228883_4.MaterialDesign.MouseState.HOVER;
+            this.QuantityErrorLabel.Name = "QuantityErrorLabel";
+            this.QuantityErrorLabel.Size = new System.Drawing.Size(201, 19);
+            this.QuantityErrorLabel.TabIndex = 8;
+            this.QuantityErrorLabel.Text = "• Quantity desired is required";
+            // 
+            // DeliveryErrorLabel
+            // 
+            this.DeliveryErrorLabel.AutoSize = true;
+            this.DeliveryErrorLabel.Depth = 0;
+            this.DeliveryErrorLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.DeliveryErrorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DeliveryErrorLabel.Location = new System.Drawing.Point(566, 202);
+            this.DeliveryErrorLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.DeliveryErrorLabel.MouseState = CSharp_Programming_COP2360_228883_4.MaterialDesign.MouseState.HOVER;
+            this.DeliveryErrorLabel.Name = "DeliveryErrorLabel";
+            this.DeliveryErrorLabel.Size = new System.Drawing.Size(178, 19);
+            this.DeliveryErrorLabel.TabIndex = 9;
+            this.DeliveryErrorLabel.Text = "• Delivery type is required";
+            // 
+            // RequiredInfoLabel
+            // 
+            this.RequiredInfoLabel.AutoSize = true;
+            this.RequiredInfoLabel.Depth = 0;
+            this.RequiredInfoLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.RequiredInfoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.RequiredInfoLabel.Location = new System.Drawing.Point(566, 173);
+            this.RequiredInfoLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 0);
+            this.RequiredInfoLabel.MouseState = CSharp_Programming_COP2360_228883_4.MaterialDesign.MouseState.HOVER;
+            this.RequiredInfoLabel.Name = "RequiredInfoLabel";
+            this.RequiredInfoLabel.Size = new System.Drawing.Size(202, 19);
+            this.RequiredInfoLabel.TabIndex = 10;
+            this.RequiredInfoLabel.Text = "Please provide the following:";
             // 
             // MainForm
             // 
@@ -241,11 +308,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.RequiredInfoLabel);
+            this.Controls.Add(this.DeliveryErrorLabel);
+            this.Controls.Add(this.QuantityErrorLabel);
+            this.Controls.Add(this.BagTypeErrorLabel);
             this.Controls.Add(this.ProcessOrderButton);
             this.Controls.Add(this.ClearSelectionButton);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.DeliveryRateBox);
-            this.Controls.Add(this.materialLabel1);
+            this.Controls.Add(this.QuantityDesiredLabel);
             this.Controls.Add(this.QuantityBox);
             this.Controls.Add(this.BagSelection);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -263,14 +334,18 @@
         private MaterialDesign.Controls.MaterialListView BagSelection;
         private System.Windows.Forms.ColumnHeader BagSelectionColumn;
         private System.Windows.Forms.ComboBox QuantityBox;
-        private MaterialDesign.Controls.MaterialLabel materialLabel1;
+        private MaterialDesign.Controls.MaterialLabel QuantityDesiredLabel;
         private MaterialDesign.Controls.MaterialRadioButton OverNightRadioButton;
         private MaterialDesign.Controls.MaterialRadioButton ThreeDayRadioButton;
-        private MaterialDesign.Controls.MaterialRadioButton materialRadioButton1;
+        private MaterialDesign.Controls.MaterialRadioButton StandardRadioButton;
         private System.Windows.Forms.GroupBox DeliveryRateBox;
         private MaterialDesign.Controls.MaterialDivider materialDivider1;
         private MaterialDesign.Controls.MaterialFlatButton ClearSelectionButton;
         private MaterialDesign.Controls.MaterialRaisedButton ProcessOrderButton;
+        private MaterialDesign.Controls.MaterialLabel BagTypeErrorLabel;
+        private MaterialDesign.Controls.MaterialLabel QuantityErrorLabel;
+        private MaterialDesign.Controls.MaterialLabel DeliveryErrorLabel;
+        private MaterialDesign.Controls.MaterialLabel RequiredInfoLabel;
     }
 }
 
