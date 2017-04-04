@@ -8,7 +8,7 @@ using System.Windows.Forms;
 ///------------------------------------------------------------------------------
 ///   Namespace:      <Class CSharp_Programming_COP2360_228883_4>                              
 ///   Class:          <Class Program>                                   
-///   Description:    <Description Assignment 3>                                  
+///   Description:    <Description Assignment 4>                                  
 ///   Author:         <Author Matias Miranda Noriega> Date: <DateTime 04/03/2017>   
 ///   Notes:          <Notes>                                        
 ///   Revision History:                                              
