@@ -98,7 +98,6 @@
             this.QuantityBox.FormattingEnabled = true;
             this.QuantityBox.Items.AddRange(new object[] {
             "1",
-            "10",
             "2",
             "3",
             "4",
@@ -106,7 +105,8 @@
             "6",
             "7",
             "8",
-            "9"});
+            "9",
+            "10"});
             this.QuantityBox.Location = new System.Drawing.Point(570, 123);
             this.QuantityBox.Margin = new System.Windows.Forms.Padding(0, 25, 100, 0);
             this.QuantityBox.Name = "QuantityBox";

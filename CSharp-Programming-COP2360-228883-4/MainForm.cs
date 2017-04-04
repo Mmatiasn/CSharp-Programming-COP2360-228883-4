@@ -49,8 +49,11 @@ namespace CSharp_Programming_COP2360_228883_4
         private void RadioButtons_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton radioButton = sender as RadioButton;
-            _shipPercent = int.Parse(radioButton.Tag.ToString()); DeliveryErrorLabel.Visible = false;
-            ProcessOrderButton_Status();
+            if (radioButton.Checked)
+            {
+                _shipPercent = int.Parse(radioButton.Tag.ToString()); DeliveryErrorLabel.Visible = false;
+                ProcessOrderButton_Status();
+            }
         }
         #endregion
 
@@ -58,8 +61,11 @@ namespace CSharp_Programming_COP2360_228883_4
         private void QuantityBox_SelectedValueChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
-            _quantity = int.Parse(comboBox.Text); QuantityErrorLabel.Visible = false;
-            ProcessOrderButton_Status();
+            if(comboBox.Text != string.Empty)
+            {
+                _quantity = int.Parse(comboBox.Text); QuantityErrorLabel.Visible = false;
+                ProcessOrderButton_Status();
+            }
         }
         #endregion
 
@@ -99,10 +105,7 @@ namespace CSharp_Programming_COP2360_228883_4
             #endregion
 
             #region Resets BagSelection
-            foreach (ListViewItem listViewItem in BagSelection.SelectedItems)
-            {
-                listViewItem.Remove();
-            }
+            BagSelection.SelectedIndices.Clear();
             #endregion
         }
         #endregion
