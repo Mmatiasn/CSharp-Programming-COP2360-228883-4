@@ -119,6 +119,10 @@ namespace CSharp_Programming_COP2360_228883_4
             #region Resets BagSelection
             BagSelection.SelectedIndices.Clear();
             #endregion
+
+            #region Process Order Button Disable and Hidden
+            ProcessOrderButton.Enabled = ProcessOrderButton.Visible = false;
+            #endregion
         }
         #endregion
 
