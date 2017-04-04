@@ -1,7 +1,9 @@
 ﻿using CSharp_Programming_COP2360_228883_4.MaterialDesign;
 using CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls;
 using System;
+using System.Drawing;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 
 #pragma warning disable 1587
@@ -52,8 +54,23 @@ namespace CSharp_Programming_COP2360_228883_4
         private void BagSelection_SelectedIndexChanged(object sender, EventArgs e)
         {
             MaterialListView listView = sender as MaterialListView;
-            if(listView != null)
-                _bagPrice = int.Parse(listView.SelectedItems[0].Tag.ToString()); BagTypeErrorLabel.Visible = false;
+
+            BagSelection.Items.Cast<ListViewItem>().ToList().ForEach(item =>
+            {
+                item.BackColor = SystemColors.Window;
+                item.ForeColor = SystemColors.WindowText;
+            });
+            BagSelection.SelectedItems.Cast<ListViewItem>().ToList().ForEach(item =>
+            {
+                item.BackColor = SystemColors.Highlight;
+                item.ForeColor = SystemColors.HighlightText;
+            });
+
+            if (listView != null && listView.SelectedIndices.Count == 1)
+            {
+                _bagPrice = int.Parse(listView.SelectedItems[0].Tag.ToString());
+                BagTypeErrorLabel.Visible = false;
+            }
             ProcessOrderButton_Status();
         }
         #endregion
@@ -74,7 +91,7 @@ namespace CSharp_Programming_COP2360_228883_4
         private void QuantityBox_SelectedValueChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
-            if(comboBox.Text != string.Empty)
+            if (comboBox.Text != string.Empty)
             {
                 _quantity = int.Parse(comboBox.Text); QuantityErrorLabel.Visible = false;
                 ProcessOrderButton_Status();

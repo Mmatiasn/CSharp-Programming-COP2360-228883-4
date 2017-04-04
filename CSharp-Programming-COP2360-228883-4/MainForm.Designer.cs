@@ -49,17 +49,20 @@
             this.QuantityErrorLabel = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialLabel();
             this.DeliveryErrorLabel = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialLabel();
             this.RequiredInfoLabel = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialLabel();
+            this.materialDivider2 = new CSharp_Programming_COP2360_228883_4.MaterialDesign.Controls.MaterialDivider();
             this.DeliveryRateBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // BagSelection
             // 
+            this.BagSelection.BackColor = System.Drawing.SystemColors.Window;
             this.BagSelection.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BagSelection.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.BagSelectionColumn});
             this.BagSelection.Depth = 0;
             this.BagSelection.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.BagSelection.FullRowSelect = true;
+            this.BagSelection.GridLines = true;
             this.BagSelection.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             listViewItem1.Tag = "45";
             listViewItem2.Tag = "50";
@@ -302,12 +305,25 @@
             this.RequiredInfoLabel.TabIndex = 10;
             this.RequiredInfoLabel.Text = "Please provide the following:";
             // 
+            // materialDivider2
+            // 
+            this.materialDivider2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider2.Depth = 0;
+            this.materialDivider2.Location = new System.Drawing.Point(514, 79);
+            this.materialDivider2.Margin = new System.Windows.Forms.Padding(10);
+            this.materialDivider2.MouseState = CSharp_Programming_COP2360_228883_4.MaterialDesign.MouseState.HOVER;
+            this.materialDivider2.Name = "materialDivider2";
+            this.materialDivider2.Size = new System.Drawing.Size(1, 200);
+            this.materialDivider2.TabIndex = 11;
+            this.materialDivider2.Text = "materialDivider2";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 500);
+            this.Controls.Add(this.materialDivider2);
             this.Controls.Add(this.RequiredInfoLabel);
             this.Controls.Add(this.DeliveryErrorLabel);
             this.Controls.Add(this.QuantityErrorLabel);
@@ -346,6 +362,7 @@
         private MaterialDesign.Controls.MaterialLabel QuantityErrorLabel;
         private MaterialDesign.Controls.MaterialLabel DeliveryErrorLabel;
         private MaterialDesign.Controls.MaterialLabel RequiredInfoLabel;
+        private MaterialDesign.Controls.MaterialDivider materialDivider2;
     }
 }
 
