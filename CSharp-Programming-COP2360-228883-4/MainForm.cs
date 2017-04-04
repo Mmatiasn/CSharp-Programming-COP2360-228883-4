@@ -52,7 +52,8 @@ namespace CSharp_Programming_COP2360_228883_4
         private void BagSelection_SelectedIndexChanged(object sender, EventArgs e)
         {
             MaterialListView listView = sender as MaterialListView;
-            _bagPrice = int.Parse(listView.SelectedItems[0].Tag.ToString()); BagTypeErrorLabel.Visible = false;
+            if(listView != null)
+                _bagPrice = int.Parse(listView.SelectedItems[0].Tag.ToString()); BagTypeErrorLabel.Visible = false;
             ProcessOrderButton_Status();
         }
         #endregion
